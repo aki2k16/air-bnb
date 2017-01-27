@@ -48,7 +48,10 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  socket: /var/lib/mysql/mysql.sock
   database: air-bnb_production
-  username: air-bnb
+  username: root
   password: <%= ENV['AIR-BNB_DATABASE_PASSWORD'] %>
