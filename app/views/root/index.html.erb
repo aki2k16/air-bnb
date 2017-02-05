@@ -1,0 +1,289 @@
+<header>
+  <div class="header__main-nav clearfix">
+    <div class="header__main--title">
+      <%= link_to image_tag 'air-bnb.png', alt:"ロゴ", class:"logo_image" %>
+    </div>
+    <div class="header__main--nav">
+      <ul class="header__main--nav-menu">
+        <li class="header__main--title-list"><%= link_to "ホストになる"%></li>
+        <li class="header__main--title-list"><%= link_to "ホストになる時間がない方はこちら"%></li>
+        <li class="header__main--title-list"><%= link_to "ヘルプ"%></li>
+        <li class="header__main--title-list"><%= link_to "アカウント作成"%></li>
+        <li class="header__main--title-list"><%= link_to "ログイン", '/users/sign_in'%></li>
+      </ul>
+      <p>hellow world!</p>
+    </div>
+  </div>
+</header>
+<div class="main">
+  <div class="main__container">
+    <div class="main__header">
+      <h1 class="main__header--text">
+        <span class="main__header--text-content">旅を再発見。</span>
+        旅が楽しみになるユニークな家、体験、現地のガイドを見つけよう。
+      </h1>
+    </div>
+    <div class="SearchForm">
+      <form>
+        <div class="SearchForm__input-wrapper">
+          <div class="SearchForm__row">
+            <div class="SearchForm__location">
+              <label for="SearchForm__location" class="SearchForm__label">
+                <span class="search__location-place">場所</span>
+              </label>
+              <div>
+                <input type="text" class="LocationInput" name="location" placeholder="行き先、都市、住所" id="search-location">
+                </input>
+              </div>
+            </div>
+            <div class="SearchForm__dates">
+              <label class="SearchForm__label">
+                <span>日時</span>
+              </label>
+              <div class="DataRangePicker">
+                <div class="DataRangePickerInput">
+                  <div class="DataInput">
+                    <input id="startDate", placeholder="チェックイン"　autocomplete="off"></input>
+                  </div>
+                  <div class="DataRangePicker__arrow"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></div>
+                  <div class="DataInput">
+                    <input id="endDate", placeholder="チェックアウト"　autocomplete="off"></input>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="SearchForm__guests">
+              <label class="SearchForm__label">
+                <span>ゲスト</span>
+              </label>
+              <div class="GuestPickerTriger">
+                <button class="GuestPickerTrigger__button">
+                  <div class="guest_label">
+                    <span class="gueat_label-text">宿泊１人</span>
+                  </div>
+                  <div class="dropdown_icon">
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div class="SearchForm__submit">
+              <button type="submit" class="btn btn-primary btn-large btn-block">
+                <div>
+                  <span>
+                    <span>探す</span>
+                  </span>
+                </div>
+                </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div>
+      <div style="margin-top: 48px; margin-bottom: 48px;">
+        <h3>体験</h3>
+        <div class="experience">
+          <div class="experience__container .col-lg-4">
+            <div class="room-image">
+              <%= link_to image_tag 'sanfrancisco.jpg', alt:"ロゴ", class:"destination-image" %>
+            </div>
+            <div class="image__container--body">
+              <div class="image__contaienr--body-description">
+                <span class="image__contaienr--body-price">￥3464</span>
+                <span class="image__container--body-title"></span>
+              </div>
+            </div>
+          </div>
+          <div class="experience__container .col-lg-4">
+            <div class="room-image">
+              <%= link_to image_tag 'surf.jpg', alt:"ロゴ", class:"destination-image" %>
+            </div>
+            <div class="image__container--body">
+              <div class="image__contaienr--body-description">
+                <span class="image__contaienr--body-price">￥3464</span>
+                <span class="image__container--body-title"></span>
+              </div>
+            </div>
+          </div>
+          <div class="experience__container .col-lg-4">
+            <div class="room-image">
+              <%= link_to image_tag 'gameday.jpg', alt:"ロゴ", class:"destination-image" %>
+            </div>
+            <div class="image__container--body">
+              <div class="image__container--body__contaienr--body-description">
+                <span class="image__contaienr--body-price">￥3464</span>
+                <span class="image__container--body-title"></span>
+              </div>
+            </div>
+          </div>
+          <div class="experience__container .col-lg-4">
+            <div class="room-image">
+              <%= link_to image_tag 'playground.jpg', alt:"ロゴ", class:"destination-image" %>
+            </div>
+            <div class="image__container--body">
+              <div class="image__contaienr--body-description">
+                <span class="image__contaienr--body-price">￥3464</span>
+                <span class="image__container--body-title"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div style="margin-top: 48px; margin-bottom: 48px;">
+      <h3>お家</h3>
+      <div class="room container">
+        <div class="row">
+          <div class="image__container .col-lg-4">
+            <div class="room-image">
+              <%= link_to image_tag 'losangels-room.jpg', alt:"ロゴ", class:"destination-image" %>
+            </div>
+            <div class="image__container--body">
+              <div class="image__contaienr--body-description">
+                <span class="image__contaienr--body-price">￥14580</span>
+                <span class="image__container--body-title">ロサンゼルスのまるまる貸切</span>
+              </div>
+            </div>
+          </div>
+          <div class="image__container .col-lg-4">
+            <div class="room-image">
+              <%= link_to image_tag 'house2.jpg', alt:"ロゴ", class:"destination-image" %>
+            </div>
+            <div class="image__container--body">
+              <div class="image__contaienr--body-description">
+                <span class="image__contaienr--body-price">￥14580</span>
+                <span class="image__container--body-title">ロサンゼルスのまるまる貸切</span>
+              </div>
+            </div>
+          </div>
+          <div class="image__container .col-lg-4">
+            <div class="room-image">
+              <%= link_to image_tag 'house3.jpg', alt:"ロゴ", class:"destination-image" %>
+            </div>
+            <div class="image__container--body">
+              <div class="image__contaienr--body-description">
+                <span class="image__contaienr--body-price">￥14580</span>
+                <span class="image__container--body-title">ロサンゼルスのまるまる貸切</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3>注目の目的地</h3>
+    <div class="destination">
+      <div class="destination__container">
+        <div><%= link_to image_tag 'tokyo.jpg', alt:"ロゴ", class:"destination-image" %></div>
+        <div style="margin-top: 8px">
+          <span class="destination-label">東京</span>
+        </div>
+      </div>
+      <div class="destination__container">
+        <div><%= link_to image_tag 'losangels.jpg', alt:"ロゴ", class:"destination-image" %></div>
+        <div style="margin-top: 8px">
+          <span class="destination-label">ロサンゼルス</span>
+        </div>
+      </div>
+      <div class="destination__container">
+        <div><%= link_to image_tag 'miami.jpg', alt:"ロゴ", class:"destination-image" %></div>
+        <div style="margin-top: 8px">
+          <span class="destination-label">マイアミ</span>
+        </div>
+      </div>
+      <div class="destination__container">
+        <div><%= link_to image_tag 'london.jpg', alt:"ロゴ", class:"destination-image" %></div>
+        <div style="margin-top: 8px">
+          <span class="destination-label">ロンドン</span>
+        </div>
+      </div>
+      <div class="destination__container">
+        <div><%= link_to image_tag 'paris.jpg', alt:"ロゴ", class:"destination-image" %></div>
+        <div style="margin-top: 8px">
+          <span class="destination-label">パリ</span>
+        </div>
+      </div>
+      <div class="destination__container">
+        <div><%= link_to image_tag 'capetown.jpg', alt:"ロゴ", class:"destination-image" %></div>
+        <div style="margin-top: 8px">
+          <span class="destination-label">ケープタウン</span>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="loading" style="text-align: center; margin-bottom: 24px;">
+      <i class="fa fa-spinner fa-3x fa-fw"></i>
+    </div>
+  </div>
+  <footer>
+    <div class="footer__container">
+      <div class="footer__container-top clearfix">
+        <div class="language__selecter">
+          <div id="language__selecter-1">
+            <select class="language__selecter-text">
+              <option value="en">日本語</option>
+              <option value="ja">Japanese</option>
+            </select>
+            <span><i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></span>
+          </div>
+          <div id="language__selecter-2">
+            <select class="language__selecter-text">
+              <option value="en">English</option>
+              <option value="ja">Japanese</option>
+            </select>
+          </div>
+        </div>
+        <div class="footer__container-right">
+          <div class="info-air-bnb">
+            <h1 class="bottom-info-subject">air-bnb</h1>
+            <ul class="bottom-info-contents">
+              <li>Airbnbとは</li>
+              <li>採用情報</li>
+              <li>プレス</li>
+              <li>ポリシー</li>
+              <li>ヘルプ</li>
+              <li>ダイバーシティ＆つながる</li>
+            </ul>
+          </div>
+          <div class="recommend">
+            <h1 class="bottom-info-subject">スタッフのおすすめ</h1>
+            <ul class="bottom-info-contents">
+              <li>信頼&安全</li>
+              <li>お友達紹介クーポン</li>
+              <li>Airbnb Citizen</li>
+              <li>出張</li>
+              <li>ガイドブック</li>
+            </ul>
+          </div>
+          <div class="info-hosting">
+            <h1 class="bottom-info-subject">ホスティング</h1>
+            <ul class="bottom-info-contents">
+              <li>ホストになる理由</li>
+              <li>おもてなしの心</li>
+              <li>ホストの責任</li>
+            </ul>
+          </div>
+        </div>
+      <hr class="footer__divider" width="1080px">
+      <div class="footer__container--bottom clearfix">
+        <div class="footer__container--bottom-left">
+          <p>© Airbnb, Inc.practice</P>
+        </div>
+        <div class="footer__container--bottom-right">
+          <p class="footer__container--bottom-right-text ">利用規約とプライバシー</P>
+          <p class="footer__container--bottom-right-text">サイトマップ</P>
+          <span>
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+          </span>
+          <span>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+          </span>
+          <span>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          </span>
+    </div>
+</footer>
+<div id="back-to-top" style="width: 1080px; margin: auto; text-align: center; display: none">
+  <button type="button" style="border: none; background-color: #fff;">
+    <span><i class="fa fa-chevron-up fa-3x fa-fw" aria-hidden="true" style="padding: 0;"></i></span>
+  </button>
+</div>
