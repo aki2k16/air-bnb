@@ -9,8 +9,8 @@
           <li class="header__main--title-list"><%= link_to "ホストになる"%></li>
           <li class="header__main--title-list"><%= link_to "ホストになる時間がない方はこちら"%></li>
           <li class="header__main--title-list"><%= link_to "ヘルプ"%></li>
-          <li class="header__main--title-list"><%= link_to "アカウント作成"%></li>
-          <li class="header__main--title-list"><%= link_to "ログイン", '/users/sign_in'%></li>
+          <li id="sign-in" class="header__main--title-list"><%= link_to "アカウント作成", new_user_registration_path%></li>
+          <li class="header__main--title-list"><%= link_to "ログイン", new_user_session_path%></li>
         </ul>
       </div>
     </div>
@@ -215,7 +215,7 @@
       <i class="fa fa-spinner fa-3x fa-fw"></i>
     </div>
 </div>
-<footer>
+<footer style="z-index: 0;">
   <div class="footer__container">
       <div class="footer__container-top clearfix">
         <div class="language__selecter">
@@ -224,7 +224,6 @@
               <option value="en">日本語</option>
               <option value="ja">Japanese</option>
             </select>
-            <span><i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></span>
           </div>
           <div id="language__selecter-2">
             <select class="language__selecter-text">
