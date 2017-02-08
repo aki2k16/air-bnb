@@ -16,7 +16,51 @@
     </div>
   </header>
 </div>
-<footer style="z-index: 0;">
+<div class="room__main--content">
+  <div id="room-image">
+      <%= link_to image_tag 'room1.jpg', alt:"部屋", class:"room_image" %>
+  </div>
+</div>
+<div id="summary">
+  <div class="summary__contents">
+    <div class="summary__navbar">
+      <button class="navbar-button"><span class="button-text">概要</span></button>
+      <button class="navbar-button"><span class="button-text">レビュー<span></button>
+      <button class="navbar-button"><span class="button-text">ホストについて</span></button>
+      <button class="navbar-button"><span class="button-text">所在地</span></button>
+    </div>
+    <div class="summary__body clearfix">
+      <div class="summary__body--left">
+        <div class="profile">
+          <div><%= link_to image_tag 'Octocat.png', alt:"ロゴ", class: "profile-image"%>
+          </div>
+        </div>
+      </div>
+      <div class="summary__body--right">
+        <h1 class="summary__body--right-title">
+          Cozy and charming cottage
+        </h1>
+        <div class="summary__body--right-place">Biscayne Park, フロリダ州, アメリカ</div>
+        <div class="icons">
+          <div id="icons"><i class="fa fa-home fa-fw fa-3x" aria-hidden="true"></i></div>
+          <div id="icons"><i class="fa fa-users fa-fw fa-3x" aria-hidden="true"></i></div>
+          <div id="icons"><i class="fa fa-user-o fa-fw fa-3x" aria-hidden="true"></i></div>
+          <div id="icons"><i class="fa fa-bed fa-fw fa-3x" aria-hidden="true"></i></div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="detail">
+      <div class="detail-title">
+        <h4>リスティングについて</h4>
+        <p>
+          Our cottage is located in a very quiet residential area, 15mn to the beach. Enjoy our tropical garden and beautiful pool. Parking, TV, cable and WIFI. Located in the backyard of the main house and completely independent. No kitchen but microwave and fridge.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
   <div class="footer__container">
       <div class="footer__container-top clearfix">
         <div class="language__selecter">

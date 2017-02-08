@@ -47,6 +47,7 @@ h3 {
   padding: 8px 19px 0 19px;
   line-height: 61px;
   display: block;
+  cursor: pointer;
 }
 
 a {
@@ -60,6 +61,7 @@ a:hover {
 .main {
   z-index: 0;
   box-sizing: border-box;
+  font-family:HelveticaNeue;
   &__container {
     max-width: 1080px;
     margin: 0 auto;
