@@ -6,12 +6,12 @@
       </div>
       <div class="header__main--nav">
         <ul class="header__main--nav-menu">
-          <li id="username" class="header__main--title-list"><%= current_user.name %><span style="font-size: 14px;">さん</span></li>
           <li class="header__main--title-list"><%= link_to "ホストになる"%></li>
           <li class="header__main--title-list"><%= link_to "ホストになる時間がない方はこちら"%></li>
           <li class="header__main--title-list"><%= link_to "ヘルプ"%></li>
           <li id="sign-in" class="header__main--title-list"><%= link_to "アカウント作成", new_user_registration_path%></li>
           <li class="header__main--title-list"><%= link_to "ログイン", new_user_session_path%></li>
+          <li id="username" class="header__main--title-list"><%= current_user.name %><span style="font-size: 14px;">さん</span></li>
         </ul>
       </div>
     </div>
