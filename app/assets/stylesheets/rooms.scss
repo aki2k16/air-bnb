@@ -1,3 +1,7 @@
+* {
+  font-family: "ヒラギノ角ゴ Pro"
+}
+
 .clearfix:after {
   content: "";
   clear: both;
@@ -88,4 +92,28 @@
 .detail-title {
   margin-top:48px;
   margin-bottom: 24px;
+}
+
+#review {
+  width: 705px;
+  padding: 24px;
+  margin: 0 70px;
+}
+
+.review-counts {
+  font-size: 18px;
+  font-weight: bold;
+  color: #484848;
+}
+
+.review__contents--left {
+  width: 20%;
+}
+
+.review__contents--right {
+  width: 80%;
+}
+
+.user-name {
+  font-size: 18px;
 }

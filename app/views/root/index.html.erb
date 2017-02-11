@@ -137,7 +137,9 @@
         <div class="row">
           <div class="image__container .col-lg-4">
             <div class="room-image">
-              <%= link_to image_tag 'losangels-room.jpg', alt:"ロゴ", class:"destination-image" %>
+              <%= link_to rooms_path do %>
+              <%= image_tag 'losangels-room.jpg', alt:"ロゴ", class:"destination-image" %>
+              <% end %>
             </div>
             <div class="image__container--body">
               <div class="image__contaienr--body-description">
@@ -148,7 +150,9 @@
           </div>
           <div class="image__container .col-lg-4">
             <div class="room-image">
-              <%= link_to image_tag 'house2.jpg', alt:"ロゴ", class:"destination-image" %>
+              <%= link_to rooms_path do %>
+              <%= image_tag 'house2.jpg', alt:"ロゴ", class:"destination-image" %>
+              <% end %>
             </div>
             <div class="image__container--body">
               <div class="image__contaienr--body-description">
@@ -159,7 +163,9 @@
           </div>
           <div class="image__container .col-lg-4">
             <div class="room-image">
-              <%= link_to image_tag 'house3.jpg', alt:"ロゴ", class:"destination-image" %>
+              <%= link_to rooms_path do %>
+              <%= image_tag 'house3.jpg', alt:"ロゴ", class:"destination-image" %>
+              <% end %>
             </div>
             <div class="image__container--body">
               <div class="image__contaienr--body-description">
@@ -198,7 +204,7 @@
         </div>
       </div>
       <div class="destination__container">
-        <div><%= link_to image_tag 'paris.jpg', alt:"ロゴ", class:"destination-image" %></div>
+        <div><%= link_to image_tag 'paris.jpg', alt:"ロゴ", class:"destination-image"%></div>
         <div style="margin-top: 8px">
           <span class="destination-label">パリ</span>
         </div>
@@ -280,7 +286,7 @@
     </div>
 </footer>
 <div id="back-to-top" style="width: 1080px; margin: auto; text-align: center; display: none">
-  <button type="button" style="border: none; background-color: #fff;">
+  <button class="highlight" type="button" style="border: none; background-color: #fff;">
     <span><i class="fa fa-chevron-up fa-3x fa-fw" aria-hidden="true" style="padding: 0;"></i></span>
   </button>
 </div>

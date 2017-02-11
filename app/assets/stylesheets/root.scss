@@ -459,3 +459,15 @@ i {
 　　left:0;
 　　z-index: 9999;
 }
+
+/* buttonの点滅 */
+button.highlight{
+    animation: flashing 2.0s ease-out;
+    animation-iteration-count: infinite;    /* 繰り返し回数 または infinite */
+}
+
+@keyframes flashing {
+    0%   { opacity: 0.25; }
+    50%  { opacity: 1;}
+    100% { opacity: 0.5; }
+}
