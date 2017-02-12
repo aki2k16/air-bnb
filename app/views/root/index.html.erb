@@ -9,8 +9,12 @@
           <li class="header__main--title-list"><%= link_to "ホストになる"%></li>
           <li class="header__main--title-list"><%= link_to "ホストになる時間がない方はこちら"%></li>
           <li class="header__main--title-list"><%= link_to "ヘルプ"%></li>
+          <% if user_signed_in? %>
+          <li id="sign-in" class="header__main--title-list"><%= link_to "ログアウト", destroy_user_session_path%></li>
+          <% else %>
           <li id="sign-in" class="header__main--title-list"><%= link_to "アカウント作成", new_user_registration_path%></li>
           <li class="header__main--title-list"><%= link_to "ログイン", new_user_session_path%></li>
+          <% end %>
           <li id="username" class="header__main--title-list"><%= current_user.name %><span style="font-size: 14px;">さん</span></li>
         </ul>
       </div>
