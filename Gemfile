@@ -62,3 +62,5 @@ gem 'dotenv-rails'
 gem "font-awesome-rails"
 gem 'bootstrap-sass'
 gem 'honoka-rails', '>= 3.3.6.3'
+gem 'carrierwave'
+gem 'mini_magick'
