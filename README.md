@@ -1,24 +1,33 @@
-# README
+This is a copy application of air-bnb.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Database.
 
-Things you may want to cover:
+#### ・ user
+|column name|type|restriction|
+|:---|:---|:--|
+|name|text|null: false|
+|email||null: false|
+|password||null: false|
 
-* Ruby version
+#### ・review
+|column name|type|restriction|
+|:---|:---|:--|
+|body|text|null: false|
+|image|text|
+|user_id||foreign_key: true|
+|room_id||foreign_key: true|
 
-* System dependencies
+#### ・room
+|column name|type|restriction|
+|:---|:---|:--|
+|image|text|
+|address|text|
+|user_id|
+|listing(description)|text|
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### ・reservation
+|column name|type|restriction|
+|:---|:---|:--|
+|user_id||foreign_key: true|
+|room_id||foreign_key: true|
+|guest|string|
