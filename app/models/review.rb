@@ -1,3 +1,4 @@
 class Review < ApplicationRecord
-  mount_uploader :image_url, IventImageUploader
+  belongs_to :user
+  belongs_to :room
 end
