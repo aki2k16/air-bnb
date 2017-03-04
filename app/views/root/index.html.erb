@@ -1,6 +1,7 @@
-<div id="header">
+<body>
+  <div id="header">
   <header>
-    <div class="header__main clearfix">
+    <div class="header__main clearfix style="width: 100%;"">
       <div class="header__main--title">
         <%= link_to image_tag 'air-bnb.png', alt:"ロゴ", class:"logo_image" %>
       </div>
@@ -137,49 +138,20 @@
         </div>
     </div>
     <div style="margin-top: 48px; margin-bottom: 48px;">
-      <h3>お家</h3>
-      <div class="room container">
-        <div class="row">
-          <div class="image__container .col-lg-4">
-            <div class="room-image">
-              <%= link_to rooms_path do %>
-              <%= image_tag 'losangels-room.jpg', alt:"ロゴ", class:"destination-image" %>
-              <% end %>
-            </div>
-            <div class="image__container--body">
-              <div class="image__contaienr--body-description">
-                <span class="image__contaienr--body-price">￥14580</span>
-                <span class="image__container--body-title">ロサンゼルスのまるまる貸切</span>
-              </div>
-            </div>
+      <h3 style="margin: 0;">お家</h3>
+      <div class="room-wrapper">
+        <% @rooms.each do |room| %>
+          <div>
+            <%= image_tag room.image, class:"room-box"; %>
+            <%= link_to 'お部屋１', room_path(room), {method: :get} %>
           </div>
-          <div class="image__container .col-lg-4">
-            <div class="room-image">
-              <%= link_to rooms_path do %>
-              <%= image_tag 'house2.jpg', alt:"ロゴ", class:"destination-image" %>
-              <% end %>
-            </div>
-            <div class="image__container--body">
-              <div class="image__contaienr--body-description">
-                <span class="image__contaienr--body-price">￥14580</span>
-                <span class="image__container--body-title">ロサンゼルスのまるまる貸切</span>
-              </div>
-            </div>
+          <div class="room-box">
+            <%= image_tag 'house2.jpg', alt:"ロゴ", class:"destination-image" %>
           </div>
-          <div class="image__container .col-lg-4">
-            <div class="room-image">
-              <%= link_to rooms_path do %>
-              <%= image_tag 'house3.jpg', alt:"ロゴ", class:"destination-image" %>
-              <% end %>
-            </div>
-            <div class="image__container--body">
-              <div class="image__contaienr--body-description">
-                <span class="image__contaienr--body-price">￥14580</span>
-                <span class="image__container--body-title">ロサンゼルスのまるまる貸切</span>
-              </div>
-            </div>
+          <div class="room-box">
+            <%= image_tag 'house3.jpg', alt:"ロゴ", class:"destination-image" %>
           </div>
-        </div>
+        <% end %>
       </div>
     </div>
     <h3>注目の目的地</h3>
@@ -288,8 +260,12 @@
           <span>
             <i class="fa fa-instagram" aria-hidden="true"></i>
           </span>
+        </div>
+      </div>
     </div>
+  </div>
 </footer>
+</body>
 <div id="back-to-top" style="width: 1080px; margin: auto; text-align: center; display: none">
   <button class="highlight" type="button" style="border: none; background-color: #fff;">
     <span><i class="fa fa-chevron-up fa-3x fa-fw" aria-hidden="true" style="padding: 0;"></i></span>

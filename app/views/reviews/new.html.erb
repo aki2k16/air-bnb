@@ -1,0 +1,15 @@
+<div class="review_wrapper" style="text-align: center;">
+<h1 class="review_form_title">Review</h1>
+<%= form_for [@room, @review] do |f| %>
+  <div class="review_form">
+    <%= f.text_area :body, placeholder: 'write your review here！', style: 'width: 100%;height: 300px;' %>
+  </div>
+  <div class="row">
+    <div class="col10 push1">
+    <%= button_tag type:"submit", class: "btn btn--block" do %>
+      投稿する
+    <% end %>
+    </div>
+  </div>
+<% end %>
+</div>

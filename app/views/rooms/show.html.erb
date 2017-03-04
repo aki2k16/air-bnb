@@ -3,6 +3,7 @@
     <div class="header__main clearfix">
       <div class="header__main--title">
         <%= link_to image_tag 'air-bnb.png', alt:"ロゴ", class:"logo_image" %>
+
       </div>
       <div class="header__main--nav">
         <ul class="header__main--nav-menu">
@@ -67,16 +68,16 @@
 </div>
 <hr style="margin: 0;">
 <div id="review">
-  <h4 class="review-counts">レビュー<span><%= @reviews.length %></span>件</h1>
+  <h4 class="review-counts">レビュー<span><%= @room.reviews.length %></span>件</h1>
   <% if user_signed_in? %>
-  <%= link_to 'post', new_room_review_path(1) %>
+  <%= link_to 'post', new_room_review_path(params[:id]) %>
   <% end %>
   <hr>
   <div class="review__contents">
     <% @reviews.each do |review| %>
       <div class="review__contents--left">
         <p class="user-name"><%= review.user.name %></p>
-        <p class="date"><%= review.created_at %></p>
+        <p class="date"><%= review.created_at.strftime("%Y-%m-%d %H:%M:%S") %></p>
       </div>
       <div class="review__contents--right">
         <p class="review__body">
