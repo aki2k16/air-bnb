@@ -143,13 +143,11 @@
         <% @rooms.each do |room| %>
           <div>
             <%= image_tag room.image, class:"room-box"; %>
-            <%= link_to 'お部屋１', room_path(room), {method: :get} %>
+            <%= link_to '　詳細ページ', room_path(room), {method: :get} %>
           </div>
           <div class="room-box">
-            <%= image_tag 'house2.jpg', alt:"ロゴ", class:"destination-image" %>
           </div>
           <div class="room-box">
-            <%= image_tag 'house3.jpg', alt:"ロゴ", class:"destination-image" %>
           </div>
         <% end %>
       </div>
