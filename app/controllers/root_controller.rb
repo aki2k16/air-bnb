@@ -1,7 +1,7 @@
 class RootController < ApplicationController
 
   def index
-    @rooms = Room.all
+    @rooms = Room.limit(3)
   end
 
 end
