@@ -4,6 +4,13 @@
   display: block;
 }
 
+//body中央寄せ。
+body {
+  width: 1080px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
 //button & inputの青い枠をなくす。
 *:focus {
   outline: none;
@@ -102,6 +109,11 @@ a:hover {
 
 .panel-body {
   display: none;
+}
+
+.main {
+　height: 100%;
+  width: 1080px;
 }
 
 .SearchForm {
@@ -274,42 +286,24 @@ a:hover {
   margin: 0;
 }
 
-.room {
-  box-sizing: border-box;
-  margin-left: -8px;
-  margin-right: -8px;
-  overflow: auto
+.room-wrapper {
+  display: table;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 20px;
+  margin-left: -20px;
 }
 
-.image__container {
-  box-sizing: border-box;
-  padding-right: 8px;
-  padding-left: 8px;
-  padding-bottom: 0;
-  width: 30%;
-  display: inline-block;
+.room-box {
+  display: table-cell;
+  height: 224px;
 }
 
-.image__container--body {
-  padding: 8px 0;
-  &-description {
-    line-height: 18px;
-    max-height: 36px;
-  }
+.box {
+  width: 100%;
+  height: 100%;
 }
-
-.image__contaienr--body-price {
-  font-weight: 700;
-  margin: 0;
-  font-size: 15px;
-  letter-spacing: 0.2px;
-}
-
-.image__container--body-title {
-  font-size: 15px;
-  letter-spacing: 0.2px;
-}
-
+  
 .destination {
   box-sizing: border-box;
   margin-left: -8px;
