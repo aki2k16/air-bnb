@@ -1,6 +1,6 @@
 <div class="contents">
   <h2 class="title" style="margin-bottom: 24px;">Log in</h2>
-  <div class="main">
+  <div class="main-admin">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
         <%= f.label :email, class:"email"%><br />
@@ -20,7 +20,7 @@
       <% end -%>
 
       <div class="actions" style="margin-bottom: 10px;">
-        <%= f.submit "Log in", class:"btn btn-primary btn-lg btn-block"%>
+        <%= f.submit "Log in", id:"login-button", class:"btn btn-primary btn-lg btn-block"%>
       </div>
     <% end %>
 
