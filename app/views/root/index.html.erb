@@ -3,7 +3,7 @@
   <header>
     <div class="header__main clearfix style="width: 100%;"">
       <div class="header__main--title">
-        <%= link_to image_tag 'air-bnb.png', alt:"ロゴ", class:"logo_image" %>
+        <a href="/"><%= image_tag 'air-bnb.png', alt:"ロゴ", class:"logo_image" %></a>
       </div>
       <div class="header__main--nav">
         <ul class="header__main--nav-menu">
@@ -12,7 +12,7 @@
           <li class="header__main--title-list"><%= link_to "ヘルプ"%></li>
           <% if user_signed_in? %>
           <li id="sign-in" class="header__main--title-list"><%= link_to "ログアウト", destroy_user_session_path, method: :delete%></li>
-          <li id="username" class="header__main--title-list"><%= current_user.name %><span style="font-size: 14px;">さん</span></li>
+          <li id="username" class="header__main--title-list"><a href="/users/<%= current_user.id %>"><%= current_user.name %><span style="font-size: 14px;">さん</span></a></li>
           <% else %>
           <li id="sign-in" class="header__main--title-list"><%= link_to "アカウント作成", new_user_registration_path%></li>
           <li class="header__main--title-list"><%= link_to "ログイン", new_user_session_path%></li>
@@ -143,7 +143,7 @@
         <% @rooms.each do |room| %>
           <div>
             <%= image_tag room.image, class:"room-box"; %>
-            <%= link_to '　詳細ページ', room_path(room), {method: :get} %>
+            <%= link_to '詳細ページ', room_path(room), {method: :get} %>
           </div>
           <div class="room-box">
           </div>

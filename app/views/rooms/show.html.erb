@@ -2,8 +2,7 @@
   <header>
     <div class="header__main clearfix">
       <div class="header__main--title">
-        <%= link_to image_tag 'air-bnb.png', alt:"ロゴ", class:"logo_image" %>
-
+        <a href="/"><%= image_tag 'air-bnb.png', alt:"ロゴ", class:"logo_image" %></a>
       </div>
       <div class="header__main--nav">
         <ul class="header__main--nav-menu">
@@ -11,8 +10,8 @@
           <li class="header__main--title-list"><%= link_to "ホストになる時間がない方はこちら"%></li>
           <li class="header__main--title-list"><%= link_to "ヘルプ"%></li>
           <% if user_signed_in? %>
-          <li class="header__main--title-list"><%= link_to "ログアウト", destroy_user_session_path,　method: :delete%></li>
-          <li id="username" class="header__main--title-list"><%= current_user.name %><span style="font-size: 14px;">さん</span></li>
+          <li class="header__main--title-list log-out"><%= link_to "ログアウト", destroy_user_session_path,　method: :delete%></li>
+          <li id="username" class="header__main--title-list"><a href="/users/<%= current_user.id %>"><%= current_user.name %><span style="font-size: 14px;">さん</span></a></li>
           <% else %>
           <li class="header__main--title-list"><%= link_to "ログイン", new_user_session_path%></li>
           <li id="sign-in" class="header__main--title-list"><%= link_to "アカウント作成", new_user_registration_path%></li>
@@ -27,19 +26,18 @@
       <%= link_to image_tag 'room1.jpg', alt:"部屋", class:"room_image" %>
   </div>
 </div>
-<div id="summary">
-  <div class="summary__contents">
+<div id="summary" class="summary__contents--wrapper clearfix">
+  <div class="summary__contents" style="float: left;">
     <div class="summary__navbar">
-      <button class="navbar-button"><span class="button-text">概要</span></button>
-      <button class="navbar-button"><span class="button-text">レビュー<span></button>
+      <a href="#listing"><button class="navbar-button"><span class="button-text">概要</span></button></a>
+      <a href="#review"><button class="navbar-button"><span class="button-text">レビュー<span></button></a>
       <button class="navbar-button"><span class="button-text">ホストについて</span></button>
       <button class="navbar-button"><span class="button-text">所在地</span></button>
     </div>
     <div class="summary__body clearfix">
       <div class="summary__body--left">
         <div class="profile">
-          <div><%= link_to image_tag 'Octocat.png', alt:"ロゴ", class: "profile-image"%>
-          </div>
+          <%= link_to image_tag 'Octocat.png', alt:"ロゴ", class: "profile-image"%>
         </div>
       </div>
       <div class="summary__body--right">
@@ -56,8 +54,15 @@
       </div>
     </div>
     <hr>
+    <div class="refund">
+      <div class="refund-content">
+        <div class="bell"><i class="fa fa-bell-o fa-2x bell" aria-hidden="true"></i></div>
+        <div class="refund_description"><p>開始30日前までにキャンセルすれば、サービス料を含めて全額返金されます。</p>
+        </div>
+      </div>
+    </div>
     <div class="detail">
-      <div class="detail-title">
+      <div id="listing" class="detail-title">
         <h4>リスティングについて</h4>
         <p>
           Our cottage is located in a very quiet residential area, 15mn to the beach. Enjoy our tropical garden and beautiful pool. Parking, TV, cable and WIFI. Located in the backyard of the main house and completely independent. No kitchen but microwave and fridge.
@@ -65,28 +70,53 @@
       </div>
     </div>
   </div>
+  <% if user_signed_in? %>
+  <div class="reservation_form" style="float: right;">
+    <div class="form-price">
+      <p>￥1,117　　/泊</p>
+    </div>
+    <div class="form-content">
+      <%= form_for(@reservation) do |f| %>
+      <div style="position: relative;">
+        <label class="control-label" for="">チェックイン</label>
+        <%= f.text_field :start_date, class: 'form-control date-picker datepicker' %>
+      </div>
+      <div style="position: relative;">
+        <label class="control-label" for="">チェックアウト</label>
+        <%= f.text_field :end_date, class: 'form-control date-picker datepicker' %>
+      </div>
+        <label class="control-label" for="">ゲスト</label><br>
+        <%= f.select :guest, [["1"], ["2"],["3"],["4"],["5"]],  :prompt => "宿泊人数" %>
+        <br>
+        <%= button_tag type:"submit", class: "btn btn--block reserve" do %>
+          予約する
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
 </div>
 <hr style="margin: 0;">
+
+<!-- review表示エリア -->
 <div id="review">
   <h4 class="review-counts">レビュー<span><%= @room.reviews.length %></span>件</h1>
   <% if user_signed_in? %>
   <%= link_to 'post', new_room_review_path(params[:id]) %>
   <% end %>
   <hr>
+</div>
   <div class="review__contents">
     <% @reviews.each do |review| %>
-      <div class="review__contents--left">
         <p class="user-name"><%= review.user.name %></p>
         <p class="date"><%= review.created_at.strftime("%Y-%m-%d %H:%M:%S") %></p>
-      </div>
-      <div class="review__contents--right">
-        <p class="review__body">
-          <%= review.body %>
+        <p>
+         <%= review.body %>
         </p>
-      </div>
     <% end %>
   </div>
-</div>
+
+<!-- footerエリア -->
 <footer>
   <div class="footer__container">
       <div class="footer__container-top clearfix">

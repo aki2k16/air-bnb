@@ -1,0 +1,35 @@
+<div id="header">
+  <header>
+    <div class="header__main clearfix">
+      <div class="header__main--title">
+        <a href="/"><%= image_tag 'air-bnb.png', alt:"ロゴ", class:"logo_image" %></a>
+      </div>
+      <div class="header__main--nav">
+        <ul class="header__main--nav-menu">
+          <li class="header__main--title-list"><%= link_to "ホストになる"%></li>
+          <li class="header__main--title-list"><%= link_to "ホストになる時間がない方はこちら"%></li>
+          <li class="header__main--title-list"><%= link_to "ヘルプ"%></li>
+          <% if user_signed_in? %>
+          <li class="header__main--title-list"><%= link_to "ログアウト", destroy_user_session_path,　method: :delete%></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </header>
+</div>
+<div class="user__main--wrapper clearfix">
+  <div class="user__main--left">
+    <div class="user__info--box">
+      <div class="user__info--imagebox">
+        <%= image_tag 'Octocat.png', alt:"ロゴ", class:"user__image" %>
+        <div class="user__info--username">
+          <p class="user__info--username"><%= current_user.name %></P>
+          </div>
+      </div>
+      <p>
+    </div>
+  </div>
+  <div class="user__main--right">
+    <h1 class="user__main--right--title">予約一覧</h1>
+  </div>
+</div>
