@@ -1,0 +1,49 @@
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.logout {
+  font: bold;
+}
+
+.user__main--wrapper {
+  width: 1080px;
+  height: 700px;
+  margin-top: 24px;
+}
+
+.user__main--left {
+  float: left;
+  height: 100%;
+  width: 20%;
+  margin: 0 auto;
+}
+.user__info--imagebox {
+  width: 200px;
+  height: 200px;
+  border: solid 1px black;
+}
+.user__image {
+  display: block;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+}
+.user__info--username {
+  padding: 16px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+
+.user__main--right {
+  width: 80%;
+  height: 100%;
+  float: right;
+}
+.user__main--right--title {
+  text-align: center;
+}
