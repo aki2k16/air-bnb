@@ -54,4 +54,4 @@ production:
   socket: /var/lib/mysql/mysql.sock
   database: air-bnb_production
   username: root
-  password: <%= ENV['AIR-BNB_DATABASE_PASSWORD'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
