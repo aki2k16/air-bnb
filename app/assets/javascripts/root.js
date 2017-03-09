@@ -26,6 +26,7 @@ $(function (){
 
 });
 
+//予約フォームの日付入力画面。
 $(function(){
   $('.datepicker').datetimepicker({
     format : "YYYY/MM/DD",
