@@ -38,7 +38,6 @@
   font-weight: bold;
 }
 
-
 .user__main--right {
   width: 80%;
   height: 100%;
@@ -46,4 +45,24 @@
 }
 .user__main--right--title {
   text-align: center;
+}
+.user__main--confirm {
+  height: 600px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.user__reservations {
+  background-color: #F0F0F0;
+  border-width: 2px;
+  border-radius: 6px;
+  margin: 20px;
+  height: 30px;
+  line-height: 30px;
+  vertical-align: middle;
+}
+
+.user__main--reviews {
+  height: 600px;
+  overflow: hidden;
+  overflow-y: scroll;
 }
