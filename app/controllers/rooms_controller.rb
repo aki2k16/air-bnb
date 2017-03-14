@@ -9,4 +9,8 @@ class RoomsController < ApplicationController
     @reservation = Reservation.new
   end
 
+  def search
+    @rooms = Room.where('prefecture LIKE(?)', "%#{params[:keyword]}%").limit(1)
+  end
+
 end

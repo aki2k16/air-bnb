@@ -1,0 +1,39 @@
+<div id="header">
+<header>
+  <div class="header__main clearfix style="width: 100%;"">
+    <div class="header__main--title">
+      <a href="/"><%= image_tag 'air-bnb.png', alt:"ロゴ", class:"logo_image" %></a>
+    </div>
+    <div class="header__main--nav">
+      <ul class="header__main--nav-menu">
+        <li class="header__main--title-list"><%= link_to "ホストになる"%></li>
+        <li class="header__main--title-list"><%= link_to "ホストになる時間がない方はこちら"%></li>
+        <li class="header__main--title-list"><%= link_to "ヘルプ"%></li>
+        <% if user_signed_in? %>
+        <li id="sign-in" class="header__main--title-list"><%= link_to "ログアウト", destroy_user_session_path, method: :delete%></li>
+        <li id="username" class="header__main--title-list"><a href="/users/<%= current_user.id %>"><%= current_user.name %><span style="font-size: 14px;">さん</span></a></li>
+        <% else %>
+        <li id="sign-in" class="header__main--title-list"><%= link_to "アカウント作成", new_user_registration_path%></li>
+        <li class="header__main--title-list"><%= link_to "ログイン", new_user_session_path%></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</header>
+</div>
+<div class="search__main">
+  <% @rooms.each do |room| %>
+  <div class="search__roombox">
+    <div class="search__roombox--up">
+      <div class="search__room--image">
+        <%= image_tag room.image, class:"room-box"; %>
+      </div>
+    </div>
+    <div class="search__roombox--down">
+      <div class="search__roombox--down--listing">
+        <%= room.listing %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
