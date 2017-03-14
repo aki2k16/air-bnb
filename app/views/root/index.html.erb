@@ -31,7 +31,7 @@
       </h1>
     </div>
     <div class="SearchForm">
-      <form>
+      <%= form_tag('/rooms/search', method: :get) do %>
         <div class="SearchForm__input-wrapper">
           <div class="SearchForm__row">
             <div class="SearchForm__location">
@@ -39,7 +39,7 @@
                 <span class="search__location-place">場所</span>
               </label>
               <div>
-                <input type="text" class="LocationInput" name="location" placeholder="行き先、都市、住所" id="search-location">
+                <input type="text" class="LocationInput" name="keyword" placeholder="行き先、都市、住所" id="search-location">
                 </input>
               </div>
             </div>
@@ -50,11 +50,11 @@
               <div class="DataRangePicker">
                 <div class="DataRangePickerInput">
                   <div class="DataInput">
-                    <input id="startDate", placeholder="チェックイン"　autocomplete="off"></input>
+                    <input class="datepicker", id="startDate", placeholder="チェックイン"　autocomplete="off"></input>
                   </div>
                   <div class="DataRangePicker__arrow"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></div>
                   <div class="DataInput">
-                    <input id="endDate", placeholder="チェックアウト"　autocomplete="off"></input>
+                    <input class="datepicker", id="endDate", placeholder="チェックアウト"　autocomplete="off"></input>
                   </div>
                 </div>
               </div>
@@ -64,28 +64,22 @@
                 <span>ゲスト</span>
               </label>
               <div class="GuestPickerTriger">
-                <button class="GuestPickerTrigger__button">
-                  <div class="guest_label">
-                    <span class="gueat_label-text">宿泊１人</span>
-                  </div>
-                  <div class="dropdown_icon">
-                    <i class="fa fa-angle-down" aria-hidden="true"></i>
-                  </div>
-                </button>
+                  <select>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                  </select>
               </div>
             </div>
             <div class="SearchForm__submit">
               <button type="submit" class="btn btn-primary btn-large btn-block">
                 <div>
-                  <span>
                     <span>探す</span>
-                  </span>
                 </div>
                 </button>
             </div>
           </div>
         </div>
-      </form>
+      <% end %>
     </div>
     <div>
       <div style="margin-top: 48px; margin-bottom: 48px;">
