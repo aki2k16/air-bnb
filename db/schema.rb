@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170309102249) do
+ActiveRecord::Schema.define(version: 20170318065425) do
 
   create_table "reservations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "guest"
@@ -47,6 +47,25 @@ ActiveRecord::Schema.define(version: 20170309102249) do
     t.index ["user_id"], name: "index_rooms_on_user_id", using: :btree
   end
 
+  create_table "social_profiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "nickname"
+    t.string   "email"
+    t.string   "url"
+    t.string   "image_url"
+    t.string   "description"
+    t.text     "other",       limit: 65535
+    t.text     "credentials", limit: 65535
+    t.text     "raw_info",    limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["provider", "uid"], name: "index_social_profiles_on_provider_and_uid", unique: true, using: :btree
+    t.index ["user_id"], name: "index_social_profiles_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -71,4 +90,5 @@ ActiveRecord::Schema.define(version: 20170309102249) do
   add_foreign_key "reviews", "users"
   add_foreign_key "rooms", "reviews"
   add_foreign_key "rooms", "users"
+  add_foreign_key "social_profiles", "users"
 end
