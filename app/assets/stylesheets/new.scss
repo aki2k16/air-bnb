@@ -22,6 +22,8 @@
 }
 
 .text-feild {
+  border: 0;
+  border-bottom: black solid 2px;
   height: 64px;
   width: 386px;
   font-size: 16px;
@@ -52,20 +54,33 @@
   height: 64px;
   vertical-align: middle;
 }
-
+.sns_login_btn {
+  box-sizing: border-box;
+  border-radius: 6px;
+  background-color: #3B5998;
+  width: 386px;
+  padding: 0;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.line {
+  background: #00B900
+}
 #line_login{
-  background: #00B900;
   color: #ffffff;
 }
-
-
 #line_login .sns_btn_inner{
   color: #ffffff;
 }
-
 .sns_btn_inner{
-  font-size: 1.2rem;
+  font-size: 1.6rem;
+  font-weight: bold;
   color: #FFFFFF;
   letter-spacing: 1px;
   line-height: 34px;
+}
+.sns_msg {
+  vertical-align: middle;
+  line-height: 64px;
+  height: 64px;
 }

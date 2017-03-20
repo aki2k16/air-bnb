@@ -23,12 +23,19 @@
         <%= f.submit "Log in", id:"login-button", class:"btn btn-primary btn-lg btn-block"%>
       </div>
     <% end %>
-    <div class="sns_login_btn" id="line_login">
+    <div class="sns_login_btn line" id="line_login">
     <%= link_to (user_line_omniauth_authorize_path) do %>
       <p class="sns_btn_inner">
         <span class="sns_msg">LINE</span>
       </p>
     <% end %>
+    </div>
+    <div class="sns_login_btn">
+      <%= link_to (user_facebook_omniauth_authorize_path) do%>
+      <p class="sns_btn_inner">
+        <span class="sns_msg">facebook</span>
+      </p>
+      <% end %>
     </div>
     <%= render "devise/shared/links" %>
   </div>
