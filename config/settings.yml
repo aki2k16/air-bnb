@@ -1,0 +1,10 @@
+production: &production
+  line:
+    key: <%= ENV["LINE_KEY"] %>
+    secret: <%= ENV["LINE_SECRET"] %>
+development: &development
+  line:
+    key: <%= ENV["LINE_KEY"] %>
+    secret: <%= ENV["LINE_SECRET"] %>
+test:
+  <<: *development
