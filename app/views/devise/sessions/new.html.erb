@@ -23,6 +23,7 @@
         <%= f.submit "Log in", id:"login-button", class:"btn btn-primary btn-lg btn-block"%>
       </div>
     <% end %>
+    <p style="font-size: 20px, font-weight: bold;">or</p>
     <div class="sns_login_btn line" id="line_login">
     <%= link_to (user_line_omniauth_authorize_path) do %>
       <p class="sns_btn_inner">
@@ -37,6 +38,7 @@
       </p>
       <% end %>
     </div>
+    <p>if you hava an account</P>
     <%= render "devise/shared/links" %>
   </div>
 </div>
