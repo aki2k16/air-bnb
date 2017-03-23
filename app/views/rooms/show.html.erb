@@ -1,3 +1,4 @@
+<!-- header表示エリア　-->
 <div id="header">
   <header>
     <div class="header__main clearfix">
@@ -42,7 +43,7 @@
       </div>
       <div class="summary__body--right">
         <h1 class="summary__body--right-title">
-          Cozy and charming cottage
+          <%= @room.title %>
         </h1>
         <div class="summary__body--right-place">Biscayne Park, フロリダ州, アメリカ</div>
         <div class="icons">
@@ -65,30 +66,32 @@
       <div id="listing" class="detail-title">
         <h4>リスティングについて</h4>
         <p>
-          Our cottage is located in a very quiet residential area, 15mn to the beach. Enjoy our tropical garden and beautiful pool. Parking, TV, cable and WIFI. Located in the backyard of the main house and completely independent. No kitchen but microwave and fridge.
+          <%= @room.listing %>
         </p>
       </div>
     </div>
   </div>
+
+  <!-- 予約フォーム　-->
   <% if user_signed_in? %>
   <div class="reservation_form" style="float: right;">
-    <div class="form-price">
-      <p>￥1,117　　/泊</p>
+    <div class="form-price" style="margin-bottom: 10px;">
+      <p>¥<%= @room.price %>　　/1泊</p>
     </div>
     <div class="form-content">
       <%= form_for(@reservation) do |f| %>
       <div style="position: relative;">
         <label class="control-label" for="">チェックイン</label>
-        <%= f.text_field :start_date, class: 'form-control date-picker datepicker' %>
+        <%= f.text_field :start_date, placeholder: "チェックイン", class: 'form-control date-picker datepicker', style: "margin-bottom: 20px; width: 60%;" %>
       </div>
       <div style="position: relative;">
         <label class="control-label" for="">チェックアウト</label>
-        <%= f.text_field :end_date, class: 'form-control date-picker datepicker' %>
+        <%= f.text_field :end_date, placeholder: "チェックアウト", class: 'form-control date-picker datepicker', style: "margin-bottom: 20px; width: 60%;" %>
       </div>
         <label class="control-label" for="">ゲスト</label><br>
         <%= f.select :guest, [["1"], ["2"],["3"],["4"],["5"]],  :prompt => "宿泊人数" %>
         <br>
-        <%= button_tag type:"submit", class: "btn btn--block reserve" do %>
+        <%= button_tag type:"submit", id: "reservation-btn", class: "btn btn--block reserve", style: "margin-top: 20px; background-color: #FF5A5F; font-weight: 700; font-size: 22px; color: #ffffff; width: 100%;" do %>
           予約する
         <% end %>
       <% end %>
@@ -100,7 +103,11 @@
 
 <!-- review表示エリア -->
 <div id="review">
-  <h4 class="review-counts">レビュー<span><%= @room.reviews.length %></span>件</h1>
+  <% if @room.reviews.exists? %>
+    <h4 class="review-counts">レビュー<span><%= @room.reviews.length %></span>件</h1>
+  <% else %>
+    <h4 class="review-counts">レビューはまだありません。</span></h1>
+  <% end %>
   <% if user_signed_in? %>
   <%= link_to 'post', new_room_review_path(params[:id]) %>
   <% end %>

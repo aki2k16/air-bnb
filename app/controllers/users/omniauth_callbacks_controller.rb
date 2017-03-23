@@ -1,7 +1,7 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  # include Devise::Controllers::Rememberable
+ #LINEログイン
   def line; basic_action end
-
+ #facebookログイン
   def facebook
     # You need to implement the method below in your model (e.g. app/models/user.rb)
     @user = User.from_omniauth(request.env["omniauth.auth"])

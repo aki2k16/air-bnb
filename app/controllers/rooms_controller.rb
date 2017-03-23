@@ -1,6 +1,12 @@
 class RoomsController < ApplicationController
 
-  def index
+  def new
+    @room = Room.new
+  end
+
+  def create
+    @room = Room.new
+    @room = current_user.rooms.create(room_params)
   end
 
   def show
@@ -13,4 +19,8 @@ class RoomsController < ApplicationController
     @rooms = Room.where('prefecture LIKE(?)', "%#{params[:keyword]}%").limit(1)
   end
 
+  private
+  def room_params
+    params.require(:room).permit(:title, :prefecture, :price, :bed, :bedroom, :listing, :image, :guest)
+  end
 end

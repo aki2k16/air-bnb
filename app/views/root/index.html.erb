@@ -7,7 +7,7 @@
       </div>
       <div class="header__main--nav">
         <ul class="header__main--nav-menu">
-          <li class="header__main--title-list"><%= link_to "ホストになる"%></li>
+          <li class="header__main--title-list"><%= link_to "ホストになる", new_room_path %></li>
           <li class="header__main--title-list"><%= link_to "ホストになる時間がない方はこちら"%></li>
           <li class="header__main--title-list"><%= link_to "ヘルプ"%></li>
           <% if user_signed_in? %>
@@ -133,15 +133,13 @@
     </div>
     <div style="margin-top: 48px; margin-bottom: 48px;">
       <h3 style="margin: 0;">お家</h3>
-      <div class="room-wrapper">
+      <div class="room-wrapper clearfix">
         <% @rooms.each do |room| %>
-          <div>
-            <%= image_tag room.image, class:"room-box"; %>
-            <%= link_to '詳細ページ', room_path(room), {method: :get} %>
-          </div>
-          <div class="room-box">
-          </div>
-          <div class="room-box">
+          <div style="float: left; padding-right: 10px;">
+            <a href="/rooms/<%= room.id %>" >
+             <%= image_tag room.image, class:"room-box"%>
+             <p>¥<%= room.price %><span style="font-weight: bold; font-color: #484848; letter-spacing: -1px; font-size: 18px; padding-left: 10px;"><%= room.title %></span></p>
+            </a>
           </div>
         <% end %>
       </div>

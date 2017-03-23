@@ -1,0 +1,79 @@
+<body>
+  <div id="header">
+  <header>
+    <div class="header__main clearfix style="width: 100%;"">
+      <div class="header__main--title">
+        <a href="/"><%= image_tag 'air-bnb.png', alt:"ロゴ", class:"logo_image" %></a>
+      </div>
+      <div class="header__main--nav">
+        <ul class="header__main--nav-menu">
+          <li class="header__main--title-list" style="border-bottom:black soid 1px;"><%= link_to "ホストになる", new_room_path %></li>
+          <li class="header__main--title-list"><%= link_to "ホストになる時間がない方はこちら"%></li>
+          <li class="header__main--title-list"><%= link_to "ヘルプ"%></li>
+          <% if user_signed_in? %>
+          <li id="sign-in" class="header__main--title-list"><%= link_to "ログアウト", destroy_user_session_path, method: :delete%></li>
+          <li id="username" class="header__main--title-list"><a href="/users/<%= current_user.id %>"><%= current_user.name %><span style="font-size: 14px;">さん</span></a></li>
+          <% else %>
+          <li id="sign-in" class="header__main--title-list"><%= link_to "アカウント作成", new_user_registration_path%></li>
+          <li class="header__main--title-list"><%= link_to "ログイン", new_user_session_path%></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </header>
+  </div>
+  <% if @room.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger">
+    <ul>
+      <% @room.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<%= form_for (@room) do |f| %>
+<div class="room__form">
+	<div class="form-group"> <!-- Full Name -->
+    <%= f.label :Title, class:"control-label"%>
+    <%= f.text_field :title, placeholder: "write awesome title", class: "form-control", autofocus: true %>
+	</div>
+	</div>
+	<div class="form-group"> <!-- State Button -->
+		<label for="state_id" class="control-label">Prefecture</label>
+    <%= f.select :prefecture, [["北海道"], ["青森"],["岩手"],["秋田"],["宮城"]], class: "form-control", :prompt => "都道府県" %>
+	</div>
+   <div class="form-group">
+      <label for="number">Geust</label>
+      <div class="">
+        <%= f.select :guest, [["1"], ["2"],["3"],["4"],["5"]], class: "form-control", :prompt => "guest" %>
+      </div>
+    </div>
+    <div class="form-group">
+        <label for="number">bedroom</label>
+        <div class="">
+          <%= f.select :bedroom, [["1"], ["2"],["3"],["4"],["5"]], class: "form-control", :prompt => "bedroom" %>
+        </div>
+      </div>
+      <div class="form-group">
+          <label for="number">bed</label>
+          <div class="form-group">
+            <%= f.select :bed, [["1"], ["2"],["3"],["4"],["5"]], class: "form-control", :prompt => "bed" %>
+          </div>
+        </div>
+	<div class="form-group">
+		<label class="control-label">Price</label>
+		<%= f.text_field :price, placeholder: "price", class: "form-control", autofocus: true %>
+	</div>
+  <div class="form-group">
+		<label class="control-label ">Listing</label>
+		<%= f.text_field :listing, placeholder: "wrire about your house.(within 255 words.)", class: "form-control", autofocus: true %>
+	</div>
+  <%= f.hidden_field :image, :value => "https://a0.muscache.com/im/pictures/22903552/b41736ff_original.jpg" %>
+  <div class="form-group"> <!-- Submit button -->
+    <%= button_tag type:"submit", class: "btn btn-primary reserve" do %>
+      Submit
+    <% end %>
+	</div>
+</div>
+<% end %>
+</body>
