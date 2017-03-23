@@ -1,0 +1,17 @@
+<% if @room.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger">
+    <ul>
+      <% @room.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <a href="/rooms/new">
+  <p>入力画面へ戻る</p>
+  </a>
+  <% else %>
+  <p>投稿が完了しました！</p>
+  <a href="/">
+  <p>トップへ戻る</p>
+  </a>
+<% end %>

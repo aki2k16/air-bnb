@@ -1,5 +1,7 @@
 class Room < ApplicationRecord
   has_many :reviews
   belongs_to :user
-  belongs_to :reservation
+  has_many :reservations
+
+  validates :price, :bed, :bedroom, :listing, :prefecture, :guest, :title, presence: true
 end
