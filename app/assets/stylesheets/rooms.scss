@@ -142,21 +142,24 @@
 }
 
 .form-price {
+  box-sizing: border-box;
+  height: 50px;
+  padding: 13px 20px 5px;
+  background-color: #3c3f40;
+  color: #ffffff;
   font-size: 2.5rem;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 28px;
+  letter-spacing: -0.2px;
 }
 .reservation_form {
-  background-color: #F7F5F5;
+  background-color: #fff;
   border: groove 2px black;
   float: right;
-  width: 400px;
-  height: 500px;
-  border-radius:6px;
-  -moz-border-radius:6px;
-  -webkit-border-radius:6px;
-  box-shadow:0px 0px 7px 3px #beccca;
-  -moz-box-shadow:0px 0px 7px 3px #beccca;
-  -webkit-box-shadow:0px 0px 7px 3px #beccca;
+  width: 315px;
+  height: 400px;
 }
-.btn .btn--block .reserve {
-  background-color:　#FF5A5F;
+#reservation-btn {
+  color:　#FF5A5F;
 }
