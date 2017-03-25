@@ -1,5 +1,5 @@
 <body>
-  <div id="header">
+  <div id="form_header">
   <header>
     <div class="header__main clearfix style="width: 100%;"">
       <div class="header__main--title">
@@ -21,59 +21,70 @@
       </div>
     </div>
   </header>
-  </div>
-  <% if @room.errors.any? %>
-  <div id="error_explanation" class="alert alert-danger">
-    <ul>
-      <% @room.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-<%= form_for (@room) do |f| %>
-<div class="room__form">
-	<div class="form-group"> <!-- Full Name -->
-    <%= f.label :Title, class:"control-label"%>
-    <%= f.text_field :title, placeholder: "write awesome title", class: "form-control", autofocus: true %>
-	</div>
-	</div>
-	<div class="form-group"> <!-- State Button -->
-		<label for="state_id" class="control-label">Prefecture</label>
-    <%= f.select :prefecture, [["北海道"], ["青森"],["岩手"],["秋田"],["宮城"]], class: "form-control", :prompt => "都道府県" %>
-	</div>
-   <div class="form-group">
-      <label for="number">Geust</label>
-      <div class="">
-        <%= f.select :guest, [["1"], ["2"],["3"],["4"],["5"]], class: "form-control", :prompt => "guest" %>
+  <div class="information__foom--wrapper clearfix">
+    <div class="information__form--left">
+      <div class="information__form--text">
+        <h1>さあ、<span><%= current_user.name %>さん！ホストの準備を始めましょう。</span></h1>
+      </div>
+      <div class="infomation__pannel">
+        <div class="information__pannel--content">
+          <h3>現在の一週間の平均リスティング価格。</h3>
+          <h3 style="font-weight: bold; font-size: 28px;">¥ 7777</h3>
+        </div>
       </div>
     </div>
-    <div class="form-group">
-        <label for="number">bedroom</label>
-        <div class="">
-          <%= f.select :bedroom, [["1"], ["2"],["3"],["4"],["5"]], class: "form-control", :prompt => "bedroom" %>
-        </div>
+    <div class="information__form--right">
+      <div class="information__form--header">
+        <p>基本情報を入力してください。</p>
       </div>
-      <div class="form-group">
-          <label for="number">bed</label>
-          <div class="form-group">
-            <%= f.select :bed, [["1"], ["2"],["3"],["4"],["5"]], class: "form-control", :prompt => "bed" %>
+      <%= form_for @room, html: {class: 'newroomform'} do |f| %>
+      	<div class="form-group"> <!-- Full Name -->
+          <%= f.label :Title, class:"control-label"%>
+          <%= f.text_field :title, placeholder: "write awesome title ex) 祇園まで徒歩5分!高瀬川沿い!桜満開アパート 1階", class: "form-control", autofocus: true %>
+      	</div>
+      	<div class="form-group"> <!-- State Button -->
+      		<label for="state_id" class="control-label">Prefecture</label>
+          <%= f.select :prefecture, [["北海道"], ["青森"],["岩手"],["秋田"],["宮城"],["福島"],["栃木"],["群馬"],["茨城"],["埼玉"],["東京"]], {},{class: "form-control", :prompt => "都道府県"}%>
+      	</div>
+        <div class="form-group">
+      		<label class="control-label ">Address</label>
+      		<%= f.text_field :address, placeholder: "Address", class: "form-control", autofocus: true %>
+      	</div>
+        <div class="form-group">
+          <label for="number">Geust</label>
+          <div class="">
+            <%= f.select :guest, [["1"], ["2"],["3"],["4"],["5"]], {},{class: "form-control", :prompt => "guest"} %>
           </div>
         </div>
-	<div class="form-group">
-		<label class="control-label">Price</label>
-		<%= f.text_field :price, placeholder: "price", class: "form-control", autofocus: true %>
-	</div>
-  <div class="form-group">
-		<label class="control-label ">Listing</label>
-		<%= f.text_field :listing, placeholder: "wrire about your house.(within 255 words.)", class: "form-control", autofocus: true %>
-	</div>
-  <%= f.hidden_field :image, :value => "https://a0.muscache.com/im/pictures/22903552/b41736ff_original.jpg" %>
-  <div class="form-group"> <!-- Submit button -->
-    <%= button_tag type:"submit", class: "btn btn-primary reserve" do %>
-      Submit
-    <% end %>
-	</div>
-</div>
-<% end %>
+        <div class="form-group">
+          <label for="number">bedroom</label>
+          <div class="">
+            <%= f.select :bedroom, [["1"], ["2"],["3"],["4"],["5"]], {},{class: "form-control", :prompt => "bedroom"} %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="number">bed</label>
+          <div class="form-group">
+            <%= f.select :bed, [["1"], ["2"],["3"],["4"],["5"]], {},{class: "form-control", :prompt => "bed"} %>
+          </div>
+        </div>
+      	<div class="form-group">
+      		<label class="control-label">Price</label>
+      		<%= f.text_field :price, placeholder: "price", class: "form-control", autofocus: true %>
+      	</div>
+        <div class="form-group">
+      		<label class="control-label ">Listing</label>
+      		<%= f.text_area :listing, :size=>"60x8", placeholder: "wrire about your house.(within 255 words.)\n（例）四条河原町、祇園まで徒歩圏内!自転車2台まで自由にお使いいただけます!
+高瀬川沿いで、春にはバルコニーから満開の桜ビューが眺められます。
+6畳2部屋で4名様までお泊まりいただけます。キッチン付調理可、コンビニもすぐで便利です!", class: "form-control", autofocus: true %>
+      	</div>
+        <%= f.hidden_field :image, :value => "https://a0.muscache.com/im/pictures/22903552/b41736ff_original.jpg" %>
+        <div class="form-group"> <!-- Submit button -->
+          <%= button_tag type:"submit", class: "btn btn-primary reserve" do %>
+            Submit
+          <% end %>
+      	</div>
+      <% end %>
+    </div>
+  </div>
 </body>

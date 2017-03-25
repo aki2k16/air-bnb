@@ -7,7 +7,11 @@
       </div>
       <div class="header__main--nav">
         <ul class="header__main--nav-menu">
-          <li class="header__main--title-list"><%= link_to "ホストになる", new_room_path %></li>
+          <% if user_signed_in? %>
+          <li class="header__main--title-list" style="border-bottom:black soid 1px;"><%= link_to "ホストになる", new_room_path %></li>
+          <% else %>
+          <li id="sign-in" class="header__main--title-list"><%= link_to "ホストになる(アカウントの登録が必要です。)", new_user_registration_path%></li>
+          <% end %>
           <li class="header__main--title-list"><%= link_to "ホストになる時間がない方はこちら"%></li>
           <li class="header__main--title-list"><%= link_to "ヘルプ"%></li>
           <% if user_signed_in? %>
@@ -139,6 +143,7 @@
             <a href="/rooms/<%= room.id %>" >
              <%= image_tag room.image, class:"room-box"%>
              <p>¥<%= room.price %><span style="font-weight: bold; font-color: #484848; letter-spacing: -1px; font-size: 18px; padding-left: 10px;"><%= room.title %></span></p>
+             <p style="margin:0;">まるまる貸切</p>
             </a>
           </div>
         <% end %>
