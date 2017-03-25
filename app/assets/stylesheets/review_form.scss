@@ -1,9 +1,35 @@
 .review_wrapper {
-  width: 700px;
-  height: 600px;
-  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  margin: 48px auto 0;
+
 }
 
-.review_form_title {
+.review__content--left {
+  float: left;
+  width: 400px;
+}
+.review__content--right {
+  float: left;
+  width: 500px;
+  border: solid 1px #EDEFED;
+}
+
+.review__content--image {
+  background-size: cover;
+  height: 250px;
+  width: 350px;
+}
+
+.reviewform__header {
   font-weight: bold;
+  height: 50px;
+  background-color: #EDEFED;
+  border: solid 1px #EDEFED;
+}
+.reviewform__inputarea {
+  margin: 20px;
+}
+.formgroup {
+  margin: 28px 0;
 }
