@@ -109,10 +109,9 @@
     <h4 class="review-counts">レビューはまだありません。</span></h1>
   <% end %>
   <% if user_signed_in? %>
-  <%= link_to 'post', new_room_review_path(params[:id]) %>
+  <%= link_to 'レビューを投稿する', new_room_review_path(params[:id]), {class: "btn btn-primary"} %>
   <% end %>
   <hr>
-</div>
   <div class="review__contents">
     <% @reviews.each do |review| %>
         <p class="user-name"><%= review.user.name %></p>
@@ -128,6 +127,7 @@
         <% end %>
     <% end %>
   </div>
+</div>
   <div id="map"></div>
     <script type="text/javascript">
 
