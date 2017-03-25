@@ -127,7 +127,6 @@
 
 .review__contents {
   margin: 0 auto;
-  height: 700px;
   overflow: hidden;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -155,11 +154,62 @@
 }
 .reservation_form {
   background-color: #fff;
-  border: groove 2px black;
+  border: groove 1px black;
   float: right;
   width: 315px;
   height: 400px;
 }
 #reservation-btn {
   color:　#FF5A5F;
+}
+.reservationform {
+  margin: 0 20px 0 20px;
+}
+
+.information__foom--wrapper {
+  margin: 0 auto;
+  margin-top: 48px;
+  max-width: 1080px;
+}
+.information__form--left {
+  width: 350px;
+  float: left;
+  height: 1000px;
+}
+.information__form--right {
+  box-sizing: border-box;
+  float: left;
+  width: 600px;
+  margin-left: 48px;
+  border: solid 1px #EDEFED;
+}
+
+.information__form--text {
+  width: 400px;
+  height: 70px;
+}
+
+.infomation__pannel{
+  width: 280px;
+  height: 150px;
+  border-radius: 3%;
+  background-color: #E5FAF9;
+  border: 1px solid #E5FAF9;
+  margin: 60px;
+}
+.information__pannel--content{
+  padding: 20px;
+}
+.information__form--header {
+  height: 50px;
+  background-color: #EDEFED;
+  border: solid 1px #EDEFED
+}
+
+.form-control {
+  padding: 0 10px;
+}
+
+.newroomform {
+  margin: 20px;
 }
