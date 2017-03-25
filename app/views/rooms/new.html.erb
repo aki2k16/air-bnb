@@ -78,7 +78,10 @@
 高瀬川沿いで、春にはバルコニーから満開の桜ビューが眺められます。
 6畳2部屋で4名様までお泊まりいただけます。キッチン付調理可、コンビニもすぐで便利です!", class: "form-control", autofocus: true %>
       	</div>
-        <%= f.hidden_field :image, :value => "https://a0.muscache.com/im/pictures/22903552/b41736ff_original.jpg" %>
+        <div class="form-group">
+        	<label class="control-label">Image *こちらの画像は詳細ページの上部に表示されます。</label>
+        	<%= f.file_field :price, placeholder: "price", autofocus: true %>
+        </div>
         <div class="form-group"> <!-- Submit button -->
           <%= button_tag type:"submit", class: "btn btn-primary reserve" do %>
             Submit
