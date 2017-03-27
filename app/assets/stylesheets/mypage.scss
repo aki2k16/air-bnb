@@ -1,16 +1,16 @@
 .clearfix:after {
-  content: "";
-  clear: both;
   display: block;
+  clear: both;
+  content: "";
 }
 
 .logout {
   font: bold;
 }
 
-.user__main--wrapper {
+.user__main-wrapper {
   width: 1080px;
-  height: 700px;
+  height: 100%;
   margin-top: 24px;
 }
 
@@ -21,8 +21,10 @@
   margin: 0 auto;
 }
 .user__info--imagebox {
-  width: 200px;
-  height: 200px;
+  width: 120px;
+  height: 120px;
+  background-size: cover;
+  border-radius: 50% 50%;
   border: solid 1px black;
 }
 .user__image {
@@ -32,7 +34,7 @@
   height: 100%;
 }
 .user__info--username {
-  padding: 16px;
+  letter-spacing: - 0.2px;
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
@@ -47,22 +49,20 @@
   text-align: center;
 }
 .user__main--confirm {
-  height: 600px;
+  height: 500px;
+  margin: 0 auto;
   overflow: hidden;
   overflow-y: scroll;
 }
-.user__reservations {
-  background-color: #F0F0F0;
-  border-width: 2px;
-  border-radius: 6px;
-  margin: 20px;
-  height: 30px;
-  line-height: 30px;
-  vertical-align: middle;
+.user__reservations--box {
+  height: 300px;
+  width: 260px;
+  float: left;
+  margin: 10px;
+  border: solid 1px #EDEFED;
+  overflow-y: scroll;
 }
 
 .user__main--reviews {
-  height: 600px;
-  overflow: hidden;
-  overflow-y: scroll;
+  height: 500px;
 }

@@ -6,7 +6,7 @@
       </div>
       <div class="header__main--nav">
         <ul class="header__main--nav-menu">
-          <li class="header__main--title-list"><%= link_to "ホストになる"%></li>
+          <li class="header__main--title-list"><%= link_to "ホストになる", new_room_path %></li>
           <li class="header__main--title-list"><%= link_to "ホストになる時間がない方はこちら"%></li>
           <li class="header__main--title-list"><%= link_to "ヘルプ"%></li>
           <% if user_signed_in? %>
@@ -17,7 +17,7 @@
     </div>
   </header>
 </div>
-<div class="user__main--wrapper clearfix">
+<div class="user__main-wrapper clearfix">
   <div class="user__main--left">
     <div class="user__info--box">
       <div class="user__info--imagebox">
@@ -31,13 +31,78 @@
   </div>
   <div class="user__main--right">
     <div class="user__main--confirm">
-      <h1 class="user__main--right--title">予約一覧</h1>
-      <div class="user__reservations">
-
+      <h3 class="user__main--right--title">予約一覧</h3>
+      <hr style="solid 1px #EDEFED;">
+      <div class="user__reservations--box"　style="margin-right: 10px;">
+        <div class="reservation__box--upper">
+          <div class="reservation__box--image" style="border-box: boxsizing; width: 260px; height: 150px; background: url(https://a0.muscache.com/im/pictures/22903552/b41736ff_original.jpg); background-size: cover;">
+          </div>
+        </div>
+        <div class="reservation__box--bottom">
+          <h3 style="text-align: center;">お部屋の名前</h3>
+          <h4>address</h4>
+          <p>日程 4/1~4/3<span style="margin-left: 40px;">guestの人数</span></p>
+        </div>
+      </div>
+      <div class="user__reservations--box"　style="margin-right: 10px;">
+        <div class="reservation__box--upper">
+          <div class="reservation__box--image" style="border-box: boxsizing; width: 260px; height: 150px; background: url(https://a0.muscache.com/im/pictures/09fbbef3-7872-4747-a1b9-257eb07ad1d9.jpg); background-size: cover;">
+          </div>
+        </div>
+        <div class="reservation__box--bottom">
+          <h3 style="text-align: center;">お部屋の名前</h3>
+          <h4>address</h4>
+          <p>日程 4/1~4/3<span style="margin-left: 40px;">guestの人数</span></p>
+        </div>
+      </div>
+      <div class="user__reservations--box" style="margin-right: 10px;">
+        <div class="reservation__box--upper" style="">
+          <div class="reservation__box--image" style="border-box: boxsizing; width: 260px; height: 150px; background: url(https://a0.muscache.com/im/pictures/4375723/0074b31f_original.jpg); background-size: cover;">
+          </div>
+        </div>
+        <div class="reservation__box--bottom">
+          <h3 style="text-align: center;">お部屋の名前</h3>
+          <h4>address</h4>
+          <p>日程 4/1~4/3<span style="margin-left: 40px;">guestの人数</span></p>
+        </div>
       </div>
     </div>
-    <hr style="border-top: 6px solid #dce0e0;">
-    <div class="user__main--reviews">
+    <div class="user__main--reviews clearfix">
+      <h3 class="user__main--right--title">レビュー投稿一覧</h3>
+      <hr style="solid 1px #EDEFED;">
+      <div class="user__reservations--box"　style="margin-right: 10px;">
+        <div class="reservation__box--upper">
+          <div class="reservation__box--image" style="border-box: boxsizing; width: 260px; height: 150px; background: url(https://a0.muscache.com/im/pictures/22903552/b41736ff_original.jpg); background-size: cover;">
+          </div>
+        </div>
+        <div class="reservation__box--bottom">
+          <h3 style="text-align: center;">お部屋の名前</h3>
+          <p style="padding: 8px;">2017/4/1</p>
+          <p style="padding: 8px;">this house is located very nice place, is close to the station and grocerry store where we can get anythig. Also, host is very kind to us.</p>
+        </div>
+      </div>
+      <div class="user__reservations--box"　style="margin-right: 10px;">
+        <div class="reservation__box--upper">
+          <div class="reservation__box--image" style="border-box: boxsizing; width: 260px; height: 150px; background: url(https://a0.muscache.com/im/pictures/09fbbef3-7872-4747-a1b9-257eb07ad1d9.jpg); background-size: cover;">
+          </div>
+        </div>
+        <div class="reservation__box--bottom">
+          <h3 style="text-align: center;">お部屋の名前</h3>
+          <p style="padding: 8px;">2017/4/2</p>
+          <p style="padding: 8px;">this house is located very nice place, is close to the station and grocerry store where we can get anythig. Also, host is very kind to us.</p>
+        </div>
+      </div>
+      <div class="user__reservations--box" style="margin-right: 10px;">
+        <div class="reservation__box--upper" style="">
+          <div class="reservation__box--image" style="border-box: boxsizing; width: 260px; height: 150px; background: url(https://a0.muscache.com/im/pictures/4375723/0074b31f_original.jpg); background-size: cover;">
+          </div>
+        </div>
+        <div class="reservation__box--bottom">
+          <h3 style="text-align: center;">お部屋の名前</h3>
+          <p style="padding: 8px;">2017/4/3</p>
+          <p style="padding: 8px;">this house is located very nice place, is close to the station and grocerry store where we can get anythig. Also, host is very kind to us.</p>
+        </div>
+      </div>
+    </div>
     </div>
   </div>
-</div>
