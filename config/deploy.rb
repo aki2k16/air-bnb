@@ -12,7 +12,7 @@ set :rbenv_ruby, '2.3.1'
 set :keep_releases, 5
 
 set :ssh_options, auth_methods: ['publickey'],
-                  keys: ['/Users/aki/.ssh/aws.pem']
+                  keys: ['/Users/aki/.ssh/air-bnb.pem']
 
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
