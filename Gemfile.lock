@@ -280,6 +280,7 @@ DEPENDENCIES
   mini_magick
   momentjs-rails (>= 2.9.0)
   mysql2 (>= 0.3.18, < 0.5)
+  nokogiri (>= 1.7.1s)
   omniauth
   omniauth-facebook
   omniauth-line
