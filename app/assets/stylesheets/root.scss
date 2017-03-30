@@ -61,6 +61,24 @@ h3 {
   display: block;
   cursor: pointer;
 }
+.header__main--title-list-image {
+  background-color: #F2F2F2;
+  box-shadow: 0 0 0 2px #DBDBDB;
+  border-radius: 50%;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
+  width: 28px;
+  height: 28px;
+}
+.header__main--title-list .profile {
+  height: 28px;
+  width: 28px;
+  display: block;
+  border-radius: 50%;
+  vertical-align: middle;
+  line-height: 61px;
+}
 
 a {
   color: #484848;

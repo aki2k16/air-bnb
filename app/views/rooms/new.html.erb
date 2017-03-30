@@ -12,7 +12,11 @@
           <li class="header__main--title-list"><%= link_to "ヘルプ"%></li>
           <% if user_signed_in? %>
           <li id="sign-in" class="header__main--title-list"><%= link_to "ログアウト", destroy_user_session_path, method: :delete%></li>
-          <li id="username" class="header__main--title-list"><a href="/users/<%= current_user.id %>"><%= current_user.name %><span style="font-size: 14px;">さん</span></a></li>
+          <% if current_user.uid == nil %>
+          <li id="username" class="header__main--title-list"><a href="/users/<%= current_user.id %>"><img class="header__main--title-list-image" src="<%= asset_path 'user_pic.png'%>"></a></li>
+          <% else %>
+          <li id="username" class="header__main--title-list"><a href="/users/<%= current_user.id %>"><img class="header__main--title-list-image" src="<%= current_user.image %>"></a></li>
+          <% end %>
           <% else %>
           <li id="sign-in" class="header__main--title-list"><%= link_to "アカウント作成", new_user_registration_path%></li>
           <li class="header__main--title-list"><%= link_to "ログイン", new_user_session_path%></li>
