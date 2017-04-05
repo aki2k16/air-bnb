@@ -8,13 +8,14 @@ class ReviewsController < ApplicationController
   def create
     @room = Room.find(params[:room_id])
     @review = current_user.reviews.create(review_params)
-    redirect_to room_path(params[:room_id])
+    redirect_to @room, flash: {notice: 'メッセージを投稿しました'}
   end
 
   def destroy
     review = Review.find(params[:id])
     if review.user_id == current_user.id
       review.destroy
+      redirect_to :back, flash: {notice: 'メッセージを削除しました'}
     end
   end
 
