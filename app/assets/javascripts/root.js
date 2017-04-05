@@ -22,12 +22,10 @@ $(function (){
         //モーダルウィンドウを表示
         $("#modal-background").fadeIn("slow");
     });
-
-
 });
 
 //予約フォームの日付入力画面。
-$(function(){
+$(document).on('ready page:load',function(){
   $('.datepicker').datetimepicker({
     format : "YYYY/MM/DD",
     icons: {
@@ -47,3 +45,42 @@ $(function(){
     }
   });
 });
+
+//ツールチップ
+$(document).on('mouseover', "a:has(.ttpShow)", function(e){
+  $('body').append('<div id="ttpPanel">' +
+          $(this).children('.ttpShow').html() + '</div>');
+  $('#ttpPanel').css({top:(e.pageY+10) + 'px',
+                left:(e.pageX+10) + 'px'}).fadeIn('fast');
+}).mousemove(function(e){
+  $('#ttpPanel').css({top:(e.pageY+10) + 'px',
+                left:(e.pageX+10) + 'px'});
+}).mouseout(function(){
+  $('#ttpPanel').remove();
+});
+
+//モーダルウィンドウ
+var mdwBtn = $('.modalBtn'),
+    overlayOpacity = 0.7,
+    fadeTime = 500;
+
+mdwBtn.on('click', function(e) {
+  e.preventDefault();
+
+  var setMdw = $(this),
+      setHref = setMdw.attr('href'),
+      setSource = $(setHref).html(),
+      wdHeight = $(window).height();
+
+      $('body').append('<div id="mdOve"')
+
+})
+
+//バリデーション
+$(document).on('keydown keyup keypress change focus blur', ".required", function(e){
+    if($(this).val() == ''){
+      $(this).css({backgroundColor: '#ffcccc'});
+    } else {
+      $(this).css({backgroundColor: '#fff'});
+    }
+  }).change();

@@ -8,12 +8,12 @@
       <div class="header__main--nav">
         <ul class="header__main--nav-menu">
           <% if user_signed_in? %>
-          <li class="header__main--title-list" style="border-bottom:black soid 1px;"><%= link_to "ホストになる", new_room_path %></li>
+          <li class="header__main--title-list" style="border-bottom:black soid 1px;"><a href="/rooms/new">ホストになる<span class="ttpShow">あなたのお部屋で素敵な旅の思い出作りのお手伝い。さあ、ホストになりましょう！</span></a></li>
           <% else %>
           <li id="sign-in" class="header__main--title-list"><%= link_to "ホストになる(アカウントの登録が必要です。)", new_user_registration_path%></li>
           <% end %>
           <li class="header__main--title-list"><%= link_to "ホストになる時間がない方はこちら"%></li>
-          <li class="header__main--title-list"><%= link_to "ヘルプ"%></li>
+          <li class="header__main--title-list"><a href="#modalInclude" class="modalBtn">ヘルプ</a></li>
           <% if user_signed_in? %>
           <li id="sign-in" class="header__main--title-list"><%= link_to "ログアウト", destroy_user_session_path, method: :delete%></li>
                <% if current_user.uid == nil %>
@@ -264,6 +264,9 @@
     </div>
   </div>
 </footer>
+<div id="modalInclude">
+  <h2>モーダルウィンドウ</h2>
+</div>
 </body>
 <div id="back-to-top" style="width: 1080px; margin: auto; text-align: center; display: none">
   <button class="highlight" type="button" style="border: none; background-color: #fff;">

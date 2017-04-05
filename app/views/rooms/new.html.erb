@@ -44,15 +44,15 @@
       <%= form_for @room, html: {class: 'newroomform'} do |f| %>
       	<div class="form-group"> <!-- Full Name -->
           <%= f.label :Title, class:"control-label"%>
-          <%= f.text_field :title, placeholder: "write awesome title ex) 渋谷まで徒歩5分!アパート 1階", class: "form-control", autofocus: true %>
+          <%= f.text_field :title, placeholder: "write awesome title ex) 渋谷まで徒歩5分!アパート 1階",class: "form-control required", autofocus: true %>
       	</div>
       	<div class="form-group"> <!-- State Button -->
       		<label for="state_id" class="control-label">Prefecture</label>
-          <%= f.select :prefecture, [["北海道"], ["青森"],["岩手"],["秋田"],["宮城"],["福島"],["栃木"],["群馬"],["茨城"],["埼玉"],["東京"]], {},{class: "form-control", :prompt => "都道府県"}%>
+          <%= f.select :prefecture,[["都道府県"],["北海道"], ["青森"],["岩手"],["秋田"],["宮城"],["福島"],["栃木"],["群馬"],["茨城"],["埼玉"],["東京"]], {},{class: "form-control", :prompt => "都道府県"}%>
       	</div>
         <div class="form-group">
       		<label class="control-label ">Address</label>
-      		<%= f.text_field :address, placeholder: "Address", class: "form-control", autofocus: true %>
+      		<%= f.text_field :address, placeholder: "Address", class: "form-control required", autofocus: true %>
       	</div>
         <div class="form-group">
           <label for="number">Geust</label>
@@ -74,11 +74,11 @@
         </div>
       	<div class="form-group">
       		<label class="control-label">Price</label>
-      		<%= f.text_field :price, placeholder: "price", class: "form-control", autofocus: true %>
+      		<%= f.text_field :price, placeholder: "price", class: "form-control required", autofocus: true %>
       	</div>
         <div class="form-group">
       		<label class="control-label ">Listing</label>
-      		<%= f.text_area :listing, :size=>"60x8", placeholder: "wrire about your house.(within 255 words.)\n(例)6畳2部屋で4名様までお泊まりいただけます。キッチン付調理可、コンビニもすぐで便利です!", class: "form-control", autofocus: true %>
+      		<%= f.text_area :listing, :size=>"60x8", placeholder: "wrire about your house.(within 255 words.)\n(例)6畳2部屋で4名様までお泊まりいただけます。キッチン付調理可、コンビニもすぐで便利です!", class: "form-control required", autofocus: true %>
       	</div>
         <div class="form-group">
         	<label class="control-label">Image *こちらの画像は詳細ページの上部に表示されます。</label>

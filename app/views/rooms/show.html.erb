@@ -14,7 +14,6 @@
           <li id="sign-in" class="header__main--title-list"><%= link_to "ホストになる(アカウントの登録が必要です。)", new_user_registration_path%></li>
           <% end %>
           <li class="header__main--title-list"><%= link_to "ホストになる時間がない方はこちら"%></li>
-          <li class="header__main--title-list"><%= link_to "ヘルプ"%></li>
           <% if user_signed_in? %>
           <li id="sign-in" class="header__main--title-list"><%= link_to "ログアウト", destroy_user_session_path, method: :delete%></li>
                <% if current_user.uid == nil %>
@@ -120,7 +119,7 @@
     <h4 class="review-counts">レビューはまだありません。</span></h1>
   <% end %>
   <% if user_signed_in? %>
-  <%= link_to 'レビューを投稿する', new_room_review_path(params[:id]), {class: "btn btn-primary"} %>
+  <%= link_to 'レビューを投稿する', new_room_review_path(params[:id]), {id:"fadebtn", class: "btn btn-default" style: "background-color: #ff5a5f;" } %>
   <% end %>
   <hr>
   <div class="review__contents">
@@ -140,7 +139,7 @@
   </div>
 </div>
   <div id="map"></div>
-    <script type="text/javascript">
+    <script type="text/javascript" data-turbolinks-eval="false">
 
     function initMap() {
   var myLatLng = {lat: -25.363, lng: 131.044};
@@ -231,6 +230,6 @@
     <span><i class="fa fa-chevron-up fa-3x fa-fw" aria-hidden="true" style="padding: 0;"></i></span>
   </button>
 </div>
-<script async defer
+<script data-turbolinks-eval="false" async defer
   src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["API_KEY"] %>&callback=initMap">
 </script>

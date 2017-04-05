@@ -32,7 +32,7 @@
         <%= form_for [@room, @review] do |f| %>
           <div class="formgroup">
             <label class="control-label">レビューを入力してください</label>
-            <%= f.text_area :body, :size=>"60x8", placeholder: "The location is perfect and really easy to access all the great things to see and do in Kyoto. ", class: "form-control", autofocus: true %>
+            <%= f.text_area :body, :size=>"60x8", placeholder: "The location is perfect and really easy to access all the great things to see and do in Kyoto. ",class: "form-control required", autofocus: true %>
           </div>
           <div class="formgroup">
             <label class="control-label">Image</label>

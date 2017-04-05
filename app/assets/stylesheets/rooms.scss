@@ -2,6 +2,10 @@
   font-family: "ヒラギノ角ゴ Pro"
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 .clearfix:after {
   content: "";
   clear: both;
