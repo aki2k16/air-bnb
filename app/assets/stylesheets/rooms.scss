@@ -199,7 +199,7 @@ a:hover {
   border-radius: 3%;
   background-color: #E5FAF9;
   border: 1px solid #E5FAF9;
-  margin: 60px;
+  margin: 60px 60px 0 60px;
 }
 .information__pannel--content{
   padding: 20px;
@@ -229,4 +229,9 @@ a:hover {
   line-height: 40px;
   vertical-align: middle;
   text-align: center;
+}
+
+.region-panel {
+  height: 100%;
+  width: 350px;
 }
