@@ -30,11 +30,63 @@
       <div class="information__form--text">
         <h1>さあ、<span><%= current_user.name %>さん！ホストの準備を始めましょう。</span></h1>
       </div>
-      <div class="infomation__pannel">
+      <div id="infomation__pannel" class="infomation__pannel" style="display: none;">
         <div class="information__pannel--content">
-          <h3>現在の一週間の平均リスティング価格。</h3>
-          <h3 style="font-weight: bold; font-size: 28px;">¥ 7777</h3>
+          <h3>現在の<span  id="regionname">地名</span>の一日の平均リスティング価格。</h3>
+          <h3 style="font-weight: bold; font-size: 28px;">¥<span id="average-prce">7777</span></h3>
         </div>
+      </div>
+      <div style="padding-top: 48px;">
+        <p>リスティングの平均価格を表示します。</p>
+      </div>
+      <div class="region-panel" style="background: url('<%= asset_path '2530.png' %>'); background-size: cover; height: 350px; width: 350px; position: relative;">
+        <ul>
+          <li>
+            <%= button_tag type:"submit", value:"北海道", class: "btn btn-default regionbtn hokkaido", style: "position: absolute; right: 20px; top: 46px;" do %>
+            北海道
+          <% end %>
+        </li>
+        <li>
+          <%= button_tag type:"submit", value:"東北", class: "btn btn-default regionbtn", style: "position: absolute; right: 60px; top: 140px;" do %>
+            東北
+          <% end %>
+        </li>
+        <li>
+          <%= button_tag type:"submit", value:"関東", class: "btn btn-default regionbtn", style: "position: absolute; right: 40px; top: 210px;" do %>
+            関東
+          <% end %>
+        </li>
+        <li>
+          <%= button_tag type:"submit",value:"中部", class: "btn btn-default regionbtn", style: "position: absolute; right: 140px; bottom: 120px;" do %>
+            中部
+          <% end %>
+        </li>
+        <li>
+          <%= button_tag type:"submit",value:"関西", class: "btn btn-default regionbtn", style: "position: absolute; right: 110px; bottom: 66px;" do %>
+            関西
+          <% end %>
+        </li>
+        <li>
+          <%= button_tag type:"submit",value:"中国", class: "btn btn-default regionbtn", style: "position: absolute;left: 70px; bottom: 90px;" do %>
+            中国
+          <% end %>
+        </li>
+        <li>
+          <%= button_tag type:"submit",value:"四国", class: "btn btn-default regionbtn", style: "position: absolute;left: 120px; bottom: 30px;" do %>
+            四国
+          <% end %>
+        </li>
+        <li>
+          <%= button_tag type:"submit",value:"九州", class: "btn btn-default regionbtn", style: "position: absolute; left: 30px; bottom: 10px;" do %>
+            九州
+          <% end %>
+        </li>
+        <li>
+          <%= button_tag type:"submit",value:"沖縄", class: "btn btn-default regionbtn", style: "position: absolute; right: 30px; bottom: 10px;" do %>
+            沖縄
+          <% end %>
+        </li>
+        </ul>
       </div>
     </div>
     <div class="information__form--right">
@@ -48,7 +100,7 @@
       	</div>
       	<div class="form-group"> <!-- State Button -->
       		<label for="state_id" class="control-label">Prefecture</label>
-          <%= f.select :prefecture,[["都道府県"],["北海道"], ["青森"],["岩手"],["秋田"],["宮城"],["福島"],["栃木"],["群馬"],["茨城"],["埼玉"],["東京"]], {},{class: "form-control", :prompt => "都道府県"}%>
+          <%= f.select :prefecture,[["都道府県"],["北海道"], ["青森"],["岩手"],["秋田"],["宮城"],["福島"],["栃木"],["群馬"],["茨城"],["埼玉"],["東京"]], {},{class: "form-control", id: "region", :prompt => "都道府県"} %>
       	</div>
         <div class="form-group">
       		<label class="control-label ">Address</label>
@@ -78,7 +130,10 @@
       	</div>
         <div class="form-group">
       		<label class="control-label ">Listing</label>
+          <div class="inputCount">
+          <div class="count">0</div>
       		<%= f.text_area :listing, :size=>"60x8", placeholder: "wrire about your house.(within 255 words.)\n(例)6畳2部屋で4名様までお泊まりいただけます。キッチン付調理可、コンビニもすぐで便利です!", class: "form-control required", autofocus: true %>
+        </div>
       	</div>
         <div class="form-group">
         	<label class="control-label">Image *こちらの画像は詳細ページの上部に表示されます。</label>
