@@ -30,4 +30,6 @@ This is a copy application of air-bnb.
 |:---|:---|:--|
 |user_id||foreign_key: true|
 |room_id||foreign_key: true|
-|guest|string|
+|guest|string
+
+add pull request template.
