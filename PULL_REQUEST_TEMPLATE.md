@@ -1,6 +1,5 @@
-Fixes #
-- [ ] a task list item
-- [ ] list syntax required
-- [ ] normal **formatting**, @mentions, #1234 refs
-- [ ] incomplete
-- [x] completed
+# 問題の背景
+
+# 何が問題なのか
+
+# 解決方法（あれば）
