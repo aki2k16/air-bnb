@@ -32,8 +32,5 @@ This is a copy application of air-bnb.
 |room_id||foreign_key: true|
 |guest|string
 
+add .github file.
 add pull request template.
-
-test
-
-test test 
